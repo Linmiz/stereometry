@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стереометрія</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- хедер -->
+    <header id="header">
+        <div id="logo-slot">
+            <img  class="logo-placeholder" src="лого.png" alt="логотип">
+        </div>
+        <div id="section-label">Гуровська Анжела ІПЗ-11</div>
+    </header>
+
+    <!-- Зона для появи навігації -->
+    <div id="hover-zone"></div>
+
+    <!-- NAV BAR -->
+    <nav id="nav-bar"></nav>
+
+    <!-- main -->
+    <main id="main">
+
+        <!-- головна -->
+        <div class="page active" id="page-root-home">
+
+            <div class="home-hero">
+                <p class="hero-eyebrow">Математика   10–11 клас</p>
+                <h1 class="hero-title">Стерео<em>метрія</em></h1>
+                <p class="hero-subtitle">
+                    Розділ геометрії, що вивчає фігури та тіла у тривимірному просторі -
+                    їхні властивості, взаємне розташування та вимірювання.
+                </p>
+                <div class="section-sep"></div>
+            </div>
+
+            <div class="info-blocks">
+                <div class="info-block">
+                    <div class="ib-num">3D</div>
+                    <div class="ib-title">Простір</div>
+                    <div class="ib-text">
+                        На відміну від планіметрії, стереометрія досліджує об'єкти у тривимірному просторі -
+                        з довжиною, шириною та висотою.
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="ib-num">∠</div>
+                    <div class="ib-title">Аксіоми</div>
+                    <div class="ib-text">
+                        Базується на аксіомах: через три точки, що не лежать на одній прямій,
+                        проходить єдина площина.
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="ib-num">∑</div>
+                    <div class="ib-title">Формули</div>
+                    <div class="ib-text">
+                        Обчислення об'єму, площі поверхні та перетинів просторових фігур -
+                        ключові завдання стереометрії.
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-hero" style="padding-top:0">
+                <p
+                    style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--text-soft);margin-bottom:36px;">
+                    Стереометрія поділяється на два великих розділи:
+                </p>
+                <div class="cards-row">
+                    <div class="cat-card poly" onclick="goTo('poly-home')">
+                        <div class="card-icon">◆</div>
+                        <div class="card-title">Многогранники</div>
+                        <div class="card-desc">Тіла, обмежені плоскими гранями: призми, піраміди, паралелепіпеди та
+                            інші.</div>
+                    </div>
+                    <div class="cat-card rot" onclick="goTo('rot-home')">
+                        <div class="card-icon">◎</div>
+                        <div class="card-title">Тіла обертання</div>
+                        <div class="card-desc">Тіла, утворені обертанням плоскої фігури навколо осі: циліндр, конус,
+                            куля, сфера.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /page-root-home -->
+
+
+        <!-- ────────────── POLY HOME ────────────── -->
+        <div class="page" id="page-poly-home">
+            <div class="inner-page">
+                <p class="inner-eyebrow">Стереометрія · Многогранники</p>
+                <h1 class="inner-title">Що таке <em>многогранник</em>?</h1>
+                <p class="inner-lead">
+                    Многогранник — це замкнене просторове тіло, обмежене скінченним числом плоских
+                    багатокутників (граней). Кожна грань має спільні ребра з сусідніми гранями.
+                </p>
+                <div class="inner-body">
+                    <div class="ib-card">
+                        <h3>Основні елементи</h3>
+                        <p>Вершина, ребро, грань — три основні елементи будь-якого многогранника.
+                            Теорема Ейлера: В − Р + Г = 2, де В — вершини, Р — ребра, Г — грані.</p>
+                    </div>
+                    <div class="ib-card">
+                        <h3>Опуклі та неопуклі</h3>
+                        <p>Опуклий многогранник — будь-які дві точки якого можна з'єднати відрізком,
+                            що повністю лежить всередині тіла. Правильні многогранники — тільки опуклі.</p>
+                    </div>
+                    <div class="ib-card">
+                        <h3>Правильні многогранники</h3>
+                        <p>Існує лише 5 правильних многогранників (платонові тіла): тетраедр, куб,
+                            октаедр, додекаедр та ікосаедр.</p>
+                    </div>
+                    <div class="ib-card">
+                        <h3>Перерізи</h3>
+                        <p>Переріз многогранника площиною — це плоский многокутник, утворений перетином
+                            площини з усіма гранями тіла.</p>
+                    </div>
+                </div>
+                <p
+                    style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--text-soft);margin-bottom:24px;">
+                    Оберіть розділ для вивчення:
+                </p>
+                <div class="sub-cards">
+                    <div class="sub-card poly-sub" onclick="goTo('prism')">
+                        <div class="sub-card-icon">⬡</div>
+                        <div class="sub-card-title">Призма</div>
+                        <div class="sub-card-hint">Визначення та властивості</div>
+                    </div>
+                    <div class="sub-card poly-sub" onclick="goTo('pyramid')">
+                        <div class="sub-card-icon">△</div>
+                        <div class="sub-card-title">Піраміда</div>
+                        <div class="sub-card-hint">Визначення та властивості</div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /page-poly-home -->
+
+
+        <!-- ────────────── PRISM ────────────── -->
+        <div class="page" id="page-prism">
+            <div class="inner-page">
+                <p class="inner-eyebrow">Многогранники · Призма</p>
+                <h1 class="inner-title"><em>Призма</em></h1>
+                <p class="inner-lead">
+                    Призма — многогранник, що має дві паралельні та рівні основи (многокутники) і бічні
+                    грані у вигляді паралелограмів, що з'єднують відповідні сторони основ.
+                </p>
+
+                <div class="shape-visual">
+                    <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="30,140 170,140 155,110 45,110" fill="rgba(212,165,165,0.25)" stroke="#d4a5a5"
+                            stroke-width="1.5" />
+                        <polygon points="55,55 155,55 145,30 65,30" fill="rgba(184,174,212,0.3)" stroke="#b8aed4"
+                            stroke-width="1.5" />
+                        <polygon points="30,140 45,110 65,30 55,55" fill="rgba(212,165,165,0.15)" stroke="#d4a5a5"
+                            stroke-width="1.2" />
+                        <polygon points="170,140 155,110 145,30 155,55" fill="rgba(184,174,212,0.2)" stroke="#b8aed4"
+                            stroke-width="1.2" />
+                        <line x1="30" y1="140" x2="55" y2="55" stroke="#c8a8a8" stroke-width="1.5" />
+                        <line x1="170" y1="140" x2="155" y2="55" stroke="#c8a8a8" stroke-width="1.5" />
+                        <line x1="45" y1="110" x2="65" y2="30" stroke="#b8aed4" stroke-width="1.2"
+                            stroke-dasharray="4,3" />
+                        <line x1="185" y1="140" x2="185" y2="55" stroke="#a8b8a8" stroke-width="1"
+                            stroke-dasharray="3,3" />
+                        <text x="192" y="100" font-size="11" fill="#a8b8a8" font-family="Cormorant Garamond">h</text>
+                    </svg>
+                </div>
+
+                <div class="formula-box" style="margin:0 0 32px">
+                    <div class="formula-item">
+                        <div class="formula-label">Об'єм</div>
+                        <div class="formula-val">V = S · h</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula-label">Бічна поверхня</div>
+                        <div class="formula-val">S<sub>б</sub> = P · h</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula-label">Повна поверхня</div>
+                        <div class="formula-val">S = S<sub>б</sub> + 2S<sub>осн</sub></div>
+                    </div>
+                </div>
+
+                <ul class="props-list">
+                    <li>Бічні ребра призми паралельні та рівні між собою.</li>
+                    <li>Бічні грані — паралелограми; у прямій призмі — прямокутники.</li>
+                    <li>Основи призми — рівні та паралельні многокутники.</li>
+                    <li>Пряма призма: бічні ребра перпендикулярні до основ.</li>
+                    <li>Правильна призма: основи — правильні многокутники, і призма пряма.</li>
+                </ul>
+            </div>
+        </div><!-- /page-prism -->
+
+
+        <!-- ────────────── PYRAMID ────────────── -->
+        <div class="page" id="page-pyramid">
+            <div class="inner-page">
+                <p class="inner-eyebrow">Многогранники · Піраміда</p>
+                <h1 class="inner-title"><em>Піраміда</em></h1>
+                <p class="inner-lead">
+                    Піраміда — многогранник з однією основою (многокутником) і бічними гранями у вигляді
+                    трикутників, що сходяться в одній точці — вершині піраміди.
+                </p>
+
+                <div class="shape-visual">
+                    <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="25,145 175,145 150,110 50,110" fill="rgba(212,165,165,0.2)" stroke="#d4a5a5"
+                            stroke-width="1.5" />
+                        <polygon points="25,145 175,145 100,35" fill="rgba(184,174,212,0.25)" stroke="#b8aed4"
+                            stroke-width="1.5" />
+                        <polygon points="175,145 150,110 100,35" fill="rgba(212,165,165,0.3)" stroke="#d4a5a5"
+                            stroke-width="1.5" />
+                        <line x1="25" y1="145" x2="50" y2="110" stroke="#c8a8a8" stroke-width="1.2"
+                            stroke-dasharray="4,3" />
+                        <line x1="50" y1="110" x2="100" y2="35" stroke="#c8a8a8" stroke-width="1.2"
+                            stroke-dasharray="4,3" />
+                        <line x1="100" y1="35" x2="100" y2="127" stroke="#a8b8a8" stroke-width="1"
+                            stroke-dasharray="3,3" />
+                        <circle cx="100" cy="127" r="2" fill="#a8b8a8" />
+                        <text x="106" y="90" font-size="11" fill="#a8b8a8" font-family="Cormorant Garamond">h</text>
+                        <circle cx="100" cy="35" r="3" fill="#b8aed4" />
+                    </svg>
+                </div>
+
+                <div class="formula-box" style="margin:0 0 32px">
+                    <div class="formula-item">
+                        <div class="formula-label">Об'єм</div>
+                        <div class="formula-val">V = ⅓ · S · h</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula-label">Бічна поверхня</div>
+                        <div class="formula-val">S<sub>б</sub> = ½ · P · a</div>
+                    </div>
+                </div>
+
+                <ul class="props-list">
+                    <li>Висота піраміди — перпендикуляр із вершини до площини основи.</li>
+                    <li>Апофема правильної піраміди — висота бічної грані.</li>
+                    <li>Усі бічні грані правильної піраміди — рівні рівнобедрені трикутники.</li>
+                    <li>Зрізана піраміда утворюється площиною, паралельною основі.</li>
+                    <li>Для зрізаної: V = ⅓h(S₁ + S₂ + √(S₁·S₂))</li>
+                </ul>
+            </div>
+        </div><!-- /page-pyramid -->
+
+
+        <!-- ────────────── ROT HOME ────────────── -->
+        <div class="page" id="page-rot-home">
+            <div class="inner-page">
+                <p class="inner-eyebrow">Стереометрія · Тіла обертання</p>
+                <h1 class="inner-title blue">Що таке тіло <em>обертання</em>?</h1>
+                <p class="inner-lead">
+                    Тіло обертання — геометричне тіло, яке утворюється обертанням плоскої фігури
+                    навколо прямої (осі обертання), що лежить у площині цієї фігури.
+                </p>
+                <div class="inner-body">
+                    <div class="ib-card">
+                        <h3>Вісь обертання</h3>
+                        <p>Пряма, навколо якої обертається твірна фігура. Точки на осі залишаються
+                            нерухомими під час обертання.</p>
+                    </div>
+                    <div class="ib-card">
+                        <h3>Твірна</h3>
+                        <p>Лінія або фігура, що обертається навколо осі. Будь-яка точка твірної
+                            описує коло у площині, перпендикулярній до осі.</p>
+                    </div>
+                    <div class="ib-card">
+                        <h3>Застосування</h3>
+                        <p>Тіла обертання широко використовуються в інженерії, архітектурі та природі:
+                            від куль до планет та атомів.</p>
+                    </div>
+                    <div class="ib-card">
+                        <h3>Переріз</h3>
+                        <p>Переріз тіла обертання площиною, що містить вісь —
+                            завжди симетрична фігура відносно цієї осі.</p>
+                    </div>
+                </div>
+                <p
+                    style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--text-soft);margin-bottom:24px;">
+                    Оберіть розділ для вивчення:
+                </p>
+                <div class="sub-cards">
+                    <div class="sub-card rot-sub" onclick="goTo('cylinder')">
+                        <div class="sub-card-icon">⬭</div>
+                        <div class="sub-card-title">Циліндр</div>
+                        <div class="sub-card-hint">Визначення та властивості</div>
+                    </div>
+                    <div class="sub-card rot-sub" onclick="goTo('cone')">
+                        <div class="sub-card-icon">▽</div>
+                        <div class="sub-card-title">Конус</div>
+                        <div class="sub-card-hint">Визначення та властивості</div>
+                    </div>
+                    <div class="sub-card rot-sub" onclick="goTo('sphere')">
+                        <div class="sub-card-icon">○</div>
+                        <div class="sub-card-title">Куля і сфера</div>
+                        <div class="sub-card-hint">Визначення та властивості</div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /page-rot-home -->
+
+
+        <!-- ────────────── CYLINDER ────────────── -->
+        <div class="page" id="page-cylinder">
+            <div class="inner-page">
+                <p class="inner-eyebrow">Тіла обертання · Циліндр</p>
+                <h1 class="inner-title blue"><em>Циліндр</em></h1>
+                <p class="inner-lead">
+                    Циліндр — тіло обертання, утворене обертанням прямокутника навколо однієї з його
+                    сторін. Має дві рівні паралельні кругові основи та бічну поверхню.
+                </p>
+
+                <div class="shape-visual">
+                    <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="100" cy="145" rx="70" ry="18" fill="rgba(165,184,212,0.3)" stroke="#a5b8d4"
+                            stroke-width="1.5" />
+                        <rect x="30" y="40" width="140" height="105" fill="rgba(165,184,212,0.15)" stroke="none" />
+                        <line x1="30" y1="40" x2="30" y2="145" stroke="#a5b8d4" stroke-width="1.5" />
+                        <line x1="170" y1="40" x2="170" y2="145" stroke="#a5b8d4" stroke-width="1.5" />
+                        <ellipse cx="100" cy="40" rx="70" ry="18" fill="rgba(184,174,212,0.4)" stroke="#b8aed4"
+                            stroke-width="1.5" />
+                        <line x1="185" y1="40" x2="185" y2="145" stroke="#a8b8a8" stroke-width="1"
+                            stroke-dasharray="3,3" />
+                        <text x="191" y="97" font-size="11" fill="#a8b8a8" font-family="Cormorant Garamond">h</text>
+                        <line x1="100" y1="40" x2="170" y2="40" stroke="#c8a8a8" stroke-width="1.2"
+                            stroke-dasharray="3,3" />
+                        <text x="128" y="33" font-size="11" fill="#c8a8a8" font-family="Cormorant Garamond">r</text>
+                    </svg>
+                </div>
+
+                <div class="formula-box blue" style="margin:0 0 32px">
+                    <div class="formula-item">
+                        <div class="formula-label">Об'єм</div>
+                        <div class="formula-val">V = πr²h</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula-label">Бічна поверхня</div>
+                        <div class="formula-val">S<sub>б</sub> = 2πrh</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula-label">Повна поверхня</div>
+                        <div class="formula-val">S = 2πr(h+r)</div>
+                    </div>
+                </div>
+
+                <ul class="props-list">
+                    <li>Основи циліндра — рівні кола, що лежать у паралельних площинах.</li>
+                    <li>Вісь циліндра — пряма, що з'єднує центри основ, перпендикулярна до них.</li>
+                    <li>Усі твірні циліндра рівні між собою та рівні висоті.</li>
+                    <li>Осьовий переріз прямого циліндра — прямокутник із діагоналлю d = √(4r²+h²).</li>
+                    <li>Переріз площиною, паралельною до основи — коло того самого радіуса.</li>
+                </ul>
+            </div>
+        </div><!-- /page-cylinder -->
+
+
+        <!-- ────────────── CONE ────────────── -->
+        <div class="page" id="page-cone">
+            <div class="inner-page">
+                <p class="inner-eyebrow">Тіла обертання · Конус</p>
+                <h1 class="inner-title blue"><em>Конус</em></h1>
+                <p class="inner-lead">
+                    Конус — тіло обертання, утворене обертанням прямокутного трикутника навколо
+                    однієї з його катетів. Має одну кругову основу та бічну поверхню, що сходиться у вершині.
+                </p>
+
+                <div class="shape-visual">
+                    <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="100" cy="145" rx="75" ry="18" fill="rgba(165,184,212,0.3)" stroke="#a5b8d4"
+                            stroke-width="1.5" />
+                        <line x1="25" y1="145" x2="100" y2="28" stroke="#b8aed4" stroke-width="1.5" />
+                        <line x1="175" y1="145" x2="100" y2="28" stroke="#a5b8d4" stroke-width="1.5" />
+                        <polygon points="25,145 175,145 100,28" fill="rgba(184,174,212,0.18)" stroke="none" />
+                        <path d="M25,145 A75,18 0 0 0 175,145" fill="none" stroke="#a5b8d4" stroke-width="1.2"
+                            stroke-dasharray="4,3" />
+                        <line x1="100" y1="28" x2="100" y2="145" stroke="#a8b8a8" stroke-width="1"
+                            stroke-dasharray="3,3" />
+                        <circle cx="100" cy="145" r="2" fill="#a8b8a8" />
+                        <text x="106" y="95" font-size="11" fill="#a8b8a8" font-family="Cormorant Garamond">h</text>
+                        <circle cx="100" cy="28" r="3" fill="#b8aed4" />
+                        <text x="148" y="105" font-size="11" fill="#c8a8a8" font-family="Cormorant Garamond"
+                            transform="rotate(-53,148,105)">l</text>
+                    </svg>
+                </div>
+
+                <div class="formula-box blue" style="margin:0 0 32px">
+                    <div class="formula-item">
+                        <div class="formula-label">Об'єм</div>
+                        <div class="formula-val">V = ⅓πr²h</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula-label">Бічна поверхня</div>
+                        <div class="formula-val">S<sub>б</sub> = πrl</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula-label">Твірна</div>
+                        <div class="formula-val">l = √(r²+h²)</div>
+                    </div>
+                </div>
+
+                <ul class="props-list">
+                    <li>Основа конуса — коло; вершина — точка, що не лежить у площині основи.</li>
+                    <li>Вісь конуса — відрізок від вершини до центру основи.</li>
+                    <li>Твірна — відрізок від вершини до будь-якої точки кола основи; всі твірні рівні.</li>
+                    <li>Осьовий переріз конуса — рівнобедрений трикутник із основою 2r та бічними сторонами l.</li>
+                    <li>Переріз площиною, паралельною до основи — коло меншого радіуса (подібне).</li>
+                </ul>
+            </div>
+        </div><!-- /page-cone -->
+
+
+        <!-- ────────────── SPHERE ────────────── -->
+        <div class="page" id="page-sphere">
+            <div class="inner-page">
+                <p class="inner-eyebrow">Тіла обертання · Куля і сфера</p>
+                <h1 class="inner-title blue">Куля і <em>сфера</em></h1>
+                <p class="inner-lead">
+                    Сфера — поверхня всіх точок простору, рівновіддалених від центру. Куля — тіло,
+                    обмежене сферою. Утворюються обертанням кола (або півкола) навколо діаметра.
+                </p>
+
+                <div class="shape-visual">
+                    <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="ballGrad" cx="38%" cy="35%" r="60%">
+                                <stop offset="0%" stop-color="rgba(220,210,240,0.95)" />
+                                <stop offset="60%" stop-color="rgba(165,184,212,0.7)" />
+                                <stop offset="100%" stop-color="rgba(120,150,190,0.5)" />
+                            </radialGradient>
+                        </defs>
+                        <circle cx="100" cy="90" r="72" fill="url(#ballGrad)" stroke="#a5b8d4" stroke-width="1.5" />
+                        <ellipse cx="100" cy="90" rx="72" ry="20" fill="none" stroke="#b8aed4" stroke-width="1.2"
+                            stroke-dasharray="5,4" />
+                        <line x1="100" y1="90" x2="172" y2="90" stroke="#c8a8a8" stroke-width="1.5" />
+                        <circle cx="100" cy="90" r="3" fill="#c8a8a8" />
+                        <text x="130" y="83" font-size="12" fill="#8a7878" font-family="Cormorant Garamond"
+                            font-style="italic">R</text>
+                    </svg>
+                </div>
+
+                <div class="formula-box blue" style="margin:0 0 32px">
+                    <div class="formula-item">
+                        <div class="formula-label">Об'єм кулі</div>
+                        <div class="formula-val">V = 4/3 · πR³</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula-label">Площа сфери</div>
+                        <div class="formula-val">S = 4πR²</div>
+                    </div>
+                </div>
+
+                <div class="inner-body" style="margin-bottom:24px">
+                    <div class="ib-card">
+                        <h3>Сфера</h3>
+                        <p>Сфера — геометричне місце точок, рівновіддалених від центру на відстань R (радіус).
+                            Це лише поверхня, без внутрішності.</p>
+                    </div>
+                    <div class="ib-card">
+                        <h3>Куля</h3>
+                        <p>Куля — тіло, обмежене сферою. Включає всі точки, відстань яких до центру не більша
+                            за R. Куля = сфера + її внутрішність.</p>
+                    </div>
+                </div>
+
+                <ul class="props-list">
+                    <li>Будь-який переріз кулі площиною — це коло.</li>
+                    <li>Найбільший переріз — великий круг, що проходить через центр: площа S = πR².</li>
+                    <li>Площа сфери дорівнює 4 площам великого круга.</li>
+                    <li>Сфера описана навколо куба зі стороною a: R = a√3/2.</li>
+                    <li>Куля вписана у куб зі стороною a: r = a/2.</li>
+                </ul>
+            </div>
+        </div><!-- /page-sphere -->
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
