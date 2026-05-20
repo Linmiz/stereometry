@@ -1,5 +1,5 @@
 const state = {
-  context: 'root', 
+  context: 'root',
   page: 'root-home'
 };
  
@@ -12,7 +12,7 @@ const navConfigs = {
     { id: 'rot-home', label: 'Тіла обертання' }
   ],
   poly: [
-    { id: 'root-home', label: '← Назад',   cls: 'back-btn', backTo: 'root' },
+    { id: 'root-home', label: '← Назад', cls: 'back-btn', backTo: 'root' },
     { sep: true },
     { id: 'poly-home', label: '<img src="home.png" alt="Домик" style="width:18px;height:18px;vertical-align:middle;">', cls: 'home-btn' },
     { id: 'prism', label: 'Призма' },
@@ -23,7 +23,7 @@ const navConfigs = {
     { sep: true },
     { id: 'rot-home', label: '<img src="home.png" alt="Домик" style="width:18px;height:18px;vertical-align:middle;">', cls: 'home-btn' },
     { id: 'cylinder', label: 'Циліндр' },
-    { id: 'cone',label: 'Конус' },
+    { id: 'cone', label: 'Конус' },
     { id: 'sphere', label: 'Куля і сфера' }
   ]
 };
@@ -64,7 +64,6 @@ function buildNav(context) {
     btn.dataset.pageId = item.id;
  
     btn.addEventListener('click', () => {
-      // "Назад" завжди повертає в root
       goTo(item.id, item.backTo || null);
     });
  
@@ -84,29 +83,22 @@ function updateActiveNav() {
 function goTo(pageId, forceContext) {
   const context = forceContext || pageContext[pageId];
  
-  // Сховати всі сторінки
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
  
-  // Показати потрібну
   const target = document.getElementById('page-' + pageId);
   if (target) target.classList.add('active');
  
-  // Оновити стан
   const prevContext = state.context;
   state.page    = pageId;
   state.context = context;
  
-  // Перебудувати навігацію якщо змінився контекст
   if (prevContext !== context) {
     buildNav(context);
   } else {
     updateActiveNav();
   }
  
-  // Анімований підпис у хедері
   animateLabel(sectionLabels[context]);
- 
-  // Скрол наверх
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
  
@@ -124,26 +116,81 @@ function animateLabel(text) {
   }, 180);
 }
  
-// ── NAV HOVER ──
-const navBar   = document.getElementById('nav-bar');
+// ── NAV HOVER (тільки десктоп, де є миша) ──
+const navBar    = document.getElementById('nav-bar');
 const hoverZone = document.getElementById('hover-zone');
-let hideTimer  = null;
+let hideTimer   = null;
  
 function showNav() {
   clearTimeout(hideTimer);
   navBar.classList.add('visible');
 }
  
-function hideNav() {
+function hideNavHover() {
+  // На мобільних hover не керує — скрол керує
+  if (window.matchMedia('(hover: none)').matches) return;
   hideTimer = setTimeout(() => {
-    navBar.classList.remove('visible');
+    // Ховаємо тільки якщо скрол далеко від верху
+    if (window.scrollY > 60) {
+      navBar.classList.remove('visible');
+    }
   }, 320);
 }
  
 hoverZone.addEventListener('mouseenter', showNav);
-hoverZone.addEventListener('mouseleave', hideNav);
+hoverZone.addEventListener('mouseleave', hideNavHover);
 navBar.addEventListener('mouseenter', showNav);
-navBar.addEventListener('mouseleave', hideNav);
+navBar.addEventListener('mouseleave', hideNavHover);
+ 
+// ── SCROLL — SHOW/HIDE NAV (всі пристрої) ──
+let lastScrollY    = window.scrollY;
+let scrollTicking  = false;
+ 
+function handleScroll() {
+  const currentY = window.scrollY;
+ 
+  if (currentY <= 10) {
+    // Самий верх — завжди показуємо
+    navBar.classList.add('visible');
+  } else if (currentY > lastScrollY) {
+    // Скролимо вниз — ховаємо
+    navBar.classList.remove('visible');
+  } else if (currentY < lastScrollY) {
+    // Скролимо вгору — показуємо
+    navBar.classList.add('visible');
+  }
+ 
+  lastScrollY   = currentY;
+  scrollTicking = false;
+}
+ 
+window.addEventListener('scroll', () => {
+  if (!scrollTicking) {
+    requestAnimationFrame(handleScroll);
+    scrollTicking = true;
+  }
+}, { passive: true });
+ 
+// ── TOUCH: swipe вгору/вниз для появи/зникнення nav ──
+let touchStartY = 0;
+ 
+document.addEventListener('touchstart', (e) => {
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
+ 
+document.addEventListener('touchend', (e) => {
+  const delta = touchStartY - e.changedTouches[0].clientY;
+  if (Math.abs(delta) < 10) return; // ігноруємо тап
+  // delta > 0 = свайп вгору (скрол вниз) → ховаємо
+  // delta < 0 = свайп вниз (скрол вгору) → показуємо
+  if (delta > 0 && window.scrollY > 60) {
+    navBar.classList.remove('visible');
+  } else if (delta < 0) {
+    navBar.classList.add('visible');
+  }
+}, { passive: true });
  
 // ── INIT ──
 buildNav('root');
+// На початку сторінки nav видима одразу
+navBar.classList.add('visible');
